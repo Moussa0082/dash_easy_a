@@ -1,0 +1,52 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4-lg-12">
+              <button style="font-size: larger;margin-left: 32px;padding: 9px; border: none; border-radius: 7px;" (click)="openDialog()" class="btn-info">+ Nouvelle Maintenance</button>
+          </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h3 class="card-title">Maintenances Effectuées</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- <div class="table-responsive"> -->
+                          <table mat-table [dataSource]="dataSource" >
+                              <ng-container matColumnDef="idMaintenance">
+                                <th mat-header-cell *matHeaderCellDef> ID Maintenance </th>
+                                <td mat-cell *matCellDef="let element"> {{element.idMaintenance}} </td>
+                              </ng-container>
+                              <ng-container matColumnDef="voiture">
+                                <th mat-header-cell *matHeaderCellDef>  Voiture </th>
+                                <td mat-cell *matCellDef="let element"> {{element.voiture.marque}}  {{element.voiture.modele}}  </td>
+                              </ng-container>
+                              <ng-container matColumnDef="prix">
+                                <th mat-header-cell *matHeaderCellDef> Prix </th>
+                                <td mat-cell *matCellDef="let element"> {{element.prix}} </td>
+                              </ng-container>
+                              <ng-container matColumnDef="date">
+                                <th mat-header-cell *matHeaderCellDef> Date </th>
+                                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                              </ng-container>
+                              <ng-container matColumnDef="description">
+                                <th mat-header-cell *matHeaderCellDef> Description </th>
+                                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                              </ng-container>
+                              <ng-container matColumnDef="action">
+                                <th mat-header-cell *matHeaderCellDef> Action </th>
+                                <td mat-cell *matCellDef="let element"> <i class="material-icons" style="color: red; cursor: pointer;"  (click)="delete(element.idMaintenance)">delete</i> </td>
+                              </ng-container>
+                          
+                              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
+                            aria-label="Select page of periodic elements"></mat-paginator>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

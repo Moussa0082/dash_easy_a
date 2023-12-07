@@ -1,0 +1,63 @@
+
+<div class="image" style="align-items: center; justify-content: center;display: flex;">
+  <img src="../../assets/img/iconPark2-removebg-preview.png" width="159px" height="156px" alt="image non disponible">
+</div>
+<h3 style=" margin-top: -1.5%; text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bold;">Ajouter Voiture</h3>
+<div class="formulare">
+  <form [formGroup]="voitureForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data" >
+      <div class="form-container">
+        <!-- 1ere Ligne -->
+        <div class="input-container"  style="display: flex;">
+          <div class="input-field">
+            <input type="text" id="marque" formControlName="marque" placeholder="Marque"  required >
+          </div>
+          <div class="input-field">
+            <input type="text" id="modele" formControlName="modele" placeholder="Modèle"  required >
+          </div>
+        </div>
+        <!-- 2eme Ligne -->
+        <div class="input-container">
+          <div class="input-field">
+            <input type="text" id="anneeSortie" formControlName="anneeSortie" placeholder="Année Sortie"  required >
+          </div>
+
+          <div class="nput-field">
+            <input type="text" id="quantite" formControlName="quantite" placeholder="Quantité"  required >
+          </div>
+        </div>
+        <!-- 3eme Ligne -->
+        <div class="input-container">
+          <div class="input-field">
+            <input type="text" id="prix" formControlName="prix" placeholder="Prix"  required style="color: black;">
+          </div>
+          
+            <div class="input-field">
+              <input type="text" id="type" formControlName="type" placeholder="Type: Location ou Vente"  required >
+            </div>
+        </div>
+           <!-- 4eme Ligne -->
+          <div class="input-container">
+            <div class="input-field">
+              <input type="text" id="puissance" formControlName="puissance" placeholder="Puissnace"  required >
+            </div>
+            <div class="input-filed">
+              <input type="file" class="form-control" formControlName="photo2" multiple="multiple" accept="image/*" (change)="ImageChange($event)"  required>
+            </div>
+          </div>
+          <!-- 5eme Ligne -->
+          <div class="input-container">
+            <div class="input-filed">
+              <input type="file" class="form-control" formControlName="photo3" multiple="multiple" accept="image/*" (change)="ImageChange2($event)" required>
+            </div>
+          <div class="nput-field">
+            <input type="file" class="form-control" placeholder="choisir un fichier"  formControlName="photo4" multiple="multiple" accept="image/*" (change)="ImageChange3($event)"  required>
+          </div>
+        </div>
+          
+        </div>
+       <div class="actions">
+        <button class="annuler"  (click)="onNoClick()" mat-button mat-dialog-close><i class='bx bx-x'></i> Annuler</button>
+        <button  (click)="onNoClick()" mat-raised-button color="primary" type="submit" [disabled]="!voitureForm.valid"> <i class='bx bx-check'></i>{{ data ? "Modifier" : "Ajouter" }}</button>
+      </div> 
+    </form>
+</div>

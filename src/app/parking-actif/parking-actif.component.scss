@@ -1,0 +1,11 @@
+.card .card-header-info .card-icon, .card .card-header-info .card-text, .card .card-header-info:not(.card-header-icon):not(.card-header-text), .card.bg-info, .card.card-rotate.bg-info .front, .card.card-rotate.bg-info .back {
+    background: linear-gradient(60deg, #308D89, #308D89);
+}
+// .mat-mdc-raised-button.mat-primary {
+//     --mdc-protected-button-container-color: #308D89;
+//     --mdc-protected-button-label-text-color: #fff;
+// }
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #F42C2C;
+    --mdc-protected-button-label-text-color: #fff;
+}

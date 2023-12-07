@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="formulaire">
+        <form [formGroup]="adminForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data" >
+        <div class="input-container" >
+            <div class="input-field">
+              <input type="text" id="nomPrenom" formControlName="nomPrenom" placeholder="Nom Prenom"  required >
+            </div>
+          </div>
+        <div class="input-container" >
+            <div class="input-field">
+              <input type="email" id="email" formControlName="email" placeholder="Email"  required >
+            </div>
+          </div>
+        <div class="input-container" >
+            <div class="input-field">
+              <input type="password" id="motdepasse" formControlName="motdepasse" placeholder="Mot de Passe"  required >
+            </div>
+          </div>
+        <div class="input-container" >
+            <div class="input-field">
+              <input type="text" id="nomParking" formControlName="nomParking" placeholder="Nom Parking"  required >
+            </div>
+          </div>
+        <div class="input-container" >
+            <div class="input-field">
+              <input type="file" id="agrementParking" formControlName="agrementParking" placeholder="Agrement Parking"  required >
+            </div>
+          </div>
+        <div class="input-container" >
+            <div class="input-field">
+              <input type="text" id="adresseParking" formControlName="adresseParking" placeholder="Adresse Parking"  required >
+            </div>
+          </div>
+          <div mat-dialog-actions class="actions">
+            <button  mat-button mat-dialog-close><i class='bx bx-x'></i> Annuler</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!adminForm.valid"> <i class='bx bx-check'></i>{{"Enregistrer" }}</button>
+          </div> 
+     </form>
+    </div>
+</div>

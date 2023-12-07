@@ -1,0 +1,52 @@
+
+  <div class="image" style="align-items: center; justify-content: center;display: flex;">
+    <img src="../../assets/img/location.jpg" width="172px" height="156px" alt="image non disponible">
+  </div>
+  <h3
+    style="margin-top: -10px;   text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bold;">
+    Nouvelle Location</h3>
+    <div class="formulare">
+      <form [formGroup]="locationForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data" >
+          <div class="form-container" >
+            <!-- 1ere Ligne -->
+            <div class="input-container" >
+              <div class="input-desc">
+                <select name="voiture" id="voiture" formControlName="voiture">
+                  <option value="" placeholder="Selectionner la voiture">Sélectionnez la voiture</option>
+                  <option *ngFor="let voiture of voitureSelect" [ngValue]="voiture">{{ voiture.marque }}</option>
+               </select>
+              </div>
+            </div>
+            <div class="input-container" >
+              <div class="input-desc">
+                <select name="client" id="client" formControlName="client">
+                  <option value="" placeholder="Selectionner la voiture">Sélectionnez le client</option>
+                  <option *ngFor="let client of clientSelect" [ngValue]="client">{{ client.nom}}</option>
+               </select>
+              </div>
+            </div>
+            <!-- 2Eme ligne -->
+            <div class="input-container" >
+              <div class="input-field">
+                <input type="number" id="prix" formControlName="prix" placeholder="Prix"  required >
+              </div>
+            </div>
+            <div class="input-container" >
+            <div class="input-field">
+              <input type="text" id="duree" formControlName="duree" placeholder="Duree"  required >
+            </div>
+            </div>
+            <div class="input-container" >
+            <div class="input-field">
+              <input type="date" id="datelocation" formControlName="dateLocation" placeholder="Date"  required >
+            </div>
+          </div>
+          </div>
+            <div  class="actions" style="    display: flex; align-items: center; margin-left: 101px;">
+              <button  (click)="onNoClick()" mat-button mat-dialog-close><i class='bx bx-x'></i> Annuler</button>
+              <button  (click)="onNoClick()" mat-raised-button color="primary" type="submit" [disabled]="!locationForm.valid"> <i class='bx bx-check'></i>{{ data ? "Modifier" : "Ajouter" }}</button>
+            </div> 
+          </form>
+      </div> 
+         
+  

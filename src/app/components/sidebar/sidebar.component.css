@@ -1,0 +1,14 @@
+.btn-info {
+    color: #ffffff;
+    background-color: blue;
+    border-color: blue;
+    box-shadow: none;
+}
+.sidebar[data-color=azure] li.active > a {
+    background-color: blue;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+}
+.active :first-child{
+    background-color: blue !important;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+}
